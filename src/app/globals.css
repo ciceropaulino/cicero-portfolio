@@ -1,26 +1,39 @@
-@import "tailwindcss";
-
+/* Definir variáveis de cores para o tema claro (com base no One Dark Pro) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: #282c34;
+    --foreground: #abb2bf;
+    --blue: #528bff;
+    --green: #98c379;
+    --purple: #c678dd;
+    --orange: #d19a66;
+    --red: #e06c75;
+    --light-blue: #61afef;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* Tema escuro */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #282c34;
+        --foreground: #abb2bf;
+        --blue: #528bff;
+        --green: #98c379;
+        --purple: #c678dd;
+        --orange: #d19a66;
+        --red: #e06c75;
+        --light-blue: #61afef;
+    }
+}
+
+/* Tema claro (pode ser ajustado, caso queira customizar para um tema claro) */
+@media (prefers-color-scheme: light) {
+    :root {
+        --background: #ffffff;
+        --foreground: #171717;
+    }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
 }
