@@ -23,7 +23,11 @@ import {
     Portal,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import { RiArrowRightLine } from "react-icons/ri"
+import {
+    RiArrowRightLine,
+    RiGithubLine,
+    RiLinkedinBoxLine,
+} from "react-icons/ri"
 
 const ringCss = defineStyle({
     outlineWidth: "2px",
@@ -50,7 +54,7 @@ export default function Home() {
                 </Box>
                 <Box display={"flex"} alignItems={"center"} justifyContent={"space-between"}>
                     <Box>
-                        <Heading fontSize={"3xl"}>
+                        <Heading as={"h1"} fontSize={"3xl"}>
                             Cicero Paulino
                         </Heading>
                         <Text fontWeight={"semibold"} fontStyle={"italic"} color={"red.solid"} opacity={0.7}>
@@ -77,7 +81,7 @@ export default function Home() {
                 </Box>
                 <Box>
                     <Box spaceY={5}>
-                        <Heading size={"2xl"} color={"red.solid"}>
+                        <Heading as={"h2"} color={"red.solid"}>
                             About me
                         </Heading>
                         <Text textAlign={"justify"}>
@@ -91,12 +95,12 @@ export default function Home() {
 
                 <Box display="flex" justifyContent="center" alignItems="center">
                     <Button colorPalette={"teal"} variant={"surface"}>
-                        See more <RiArrowRightLine />
+                        Full Profile <RiArrowRightLine />
                     </Button>
                 </Box>
 
                 <Box spaceY={5}>
-                    <Heading size={"2xl"} color={"red.solid"}>
+                    <Heading as={"h2"} color={"red.solid"}>
                         Experiences timeline
                     </Heading>
                     <Timeline.Root size="sm" variant="solid" colorPalette={"red"}>
@@ -130,6 +134,27 @@ export default function Home() {
                                         </Card.Header>
                                         <Card.Body color="fg.muted">
                                             Develop a OS with a team of students and Professors in UFRN.
+
+                                            <Dialog.Root scrollBehavior="inside" size="cover">
+                                                <Dialog.Trigger asChild>
+                                                    <Button variant="ghost" size={"2xs"} marginTop={2} colorPalette={"teal"}>Read more</Button>
+                                                </Dialog.Trigger>
+                                                <Portal>
+                                                    <Dialog.Backdrop />
+                                                    <Dialog.Positioner>
+                                                        <Dialog.Content>
+                                                            <Dialog.Header>
+                                                                <Dialog.Title>Experience</Dialog.Title>
+                                                            </Dialog.Header>
+                                                            <Dialog.CloseTrigger asChild>
+                                                                <CloseButton size="sm" />
+                                                            </Dialog.CloseTrigger>
+                                                            <Dialog.Body>
+                                                            </Dialog.Body>
+                                                        </Dialog.Content>
+                                                    </Dialog.Positioner>
+                                                </Portal>
+                                            </Dialog.Root>
                                         </Card.Body>
                                     </Card.Root>
 
@@ -154,14 +179,14 @@ export default function Home() {
 
                                             <Dialog.Root scrollBehavior="inside" size="cover">
                                                 <Dialog.Trigger asChild>
-                                                    <Button variant="ghost" size={"2xs"} marginTop={2} colorPalette={"teal"}>See more</Button>
+                                                    <Button variant="ghost" size={"2xs"} marginTop={2} colorPalette={"teal"}>Read more</Button>
                                                 </Dialog.Trigger>
                                                 <Portal>
                                                     <Dialog.Backdrop />
                                                     <Dialog.Positioner>
                                                         <Dialog.Content>
                                                             <Dialog.Header>
-                                                                <Dialog.Title>Experiences</Dialog.Title>
+                                                                <Dialog.Title>Experience</Dialog.Title>
                                                             </Dialog.Header>
                                                             <Dialog.CloseTrigger asChild>
                                                                 <CloseButton size="sm" />
@@ -202,6 +227,28 @@ export default function Home() {
                                         </Card.Header>
                                         <Card.Body color="fg.muted">
                                             study of text sampling approach in immersive three-dimensional environments.
+
+                                            <Dialog.Root scrollBehavior="inside" size="cover">
+                                                <Dialog.Trigger asChild>
+                                                    <Button variant="ghost" size={"2xs"} marginTop={2} colorPalette={"teal"}>Read more</Button>
+                                                </Dialog.Trigger>
+                                                <Portal>
+                                                    <Dialog.Backdrop />
+                                                    <Dialog.Positioner>
+                                                        <Dialog.Content>
+                                                            <Dialog.Header>
+                                                                <Dialog.Title>Experience</Dialog.Title>
+                                                            </Dialog.Header>
+                                                            <Dialog.CloseTrigger asChild>
+                                                                <CloseButton size="sm" />
+                                                            </Dialog.CloseTrigger>
+                                                            <Dialog.Body>
+                                                            </Dialog.Body>
+                                                        </Dialog.Content>
+                                                    </Dialog.Positioner>
+                                                </Portal>
+                                            </Dialog.Root>
+
                                         </Card.Body>
                                     </Card.Root>
 
@@ -221,6 +268,28 @@ export default function Home() {
                                         </Card.Header>
                                         <Card.Body color="fg.muted">
                                             study of text sampling approach in immersive three-dimensional environments.
+
+                                            <Dialog.Root scrollBehavior="inside" size="cover">
+                                                <Dialog.Trigger asChild>
+                                                    <Button variant="ghost" size={"2xs"} marginTop={2} colorPalette={"teal"}>Read more</Button>
+                                                </Dialog.Trigger>
+                                                <Portal>
+                                                    <Dialog.Backdrop />
+                                                    <Dialog.Positioner>
+                                                        <Dialog.Content>
+                                                            <Dialog.Header>
+                                                                <Dialog.Title>Experience</Dialog.Title>
+                                                            </Dialog.Header>
+                                                            <Dialog.CloseTrigger asChild>
+                                                                <CloseButton size="sm" />
+                                                            </Dialog.CloseTrigger>
+                                                            <Dialog.Body>
+                                                            </Dialog.Body>
+                                                        </Dialog.Content>
+                                                    </Dialog.Positioner>
+                                                </Portal>
+                                            </Dialog.Root>
+
                                         </Card.Body>
                                     </Card.Root>
 
@@ -250,16 +319,29 @@ export default function Home() {
 
 
                 <Box display="flex" flexDirection="column" alignItems="flex-start" gap={3}>
-                    <Heading size="2xl" color="red.solid">
+                    <Heading as={"h2"} color="red.solid">
                         Other platforms
                     </Heading>
 
-                    <Button colorPalette="teal" variant="ghost">
-                        See more <RiArrowRightLine />
-                    </Button>
-                    <Button colorPalette="teal" variant="ghost">
-                        See more <RiArrowRightLine />
-                    </Button>
+                    <Link
+                        href="https://github.com/ciceropaulino"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Button colorPalette="teal" variant="ghost">
+                            <RiGithubLine /> @ciceropaulino
+                        </Button>
+                    </Link>
+
+                    <Link
+                        href="https://www.linkedin.com/in/cicero-paulino-b85795189/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Button colorPalette="teal" variant="ghost">
+                            <RiLinkedinBoxLine /> Cicero Paulino
+                        </Button>
+                    </Link>
                 </Box>
             </Container>
         </div >
