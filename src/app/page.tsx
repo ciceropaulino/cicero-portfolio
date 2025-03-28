@@ -1,103 +1,350 @@
+import {
+    Avatar,
+    Button,
+    Card,
+    Icon,
+    Input,
+    Span,
+    Timeline,
+    Container,
+    Box,
+    Heading,
+    Center,
+    Link,
+    SimpleGrid,
+    List,
+    ListItem,
+    HStack,
+    Text,
+    defineStyle,
+    Square,
+    CloseButton,
+    Dialog,
+    Portal,
+} from "@chakra-ui/react";
 import Image from "next/image";
+import {
+    RiArrowRightLine,
+    RiGithubLine,
+    RiLinkedinBoxLine,
+} from "react-icons/ri"
+
+const ringCss = defineStyle({
+    outlineWidth: "2px",
+    outlineColor: "red.solid",
+    outlineOffset: "2px",
+    outlineStyle: "solid",
+})
 
 export default function Home() {
     return (
-        <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-            <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-                <Image
-                    className="dark:invert"
-                    src="/next.svg"
-                    alt="Next.js logo"
-                    width={180}
-                    height={38}
-                    priority
-                />
-                <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-                    <li className="mb-2 tracking-[-.01em]">
-                        THIS IS A TEST{" "}
-                        <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-                            src/app/page.tsx
-                        </code>
-                        .
-                    </li>
-                    <li className="tracking-[-.01em]">
-                        Save and see your changes instantly.
-                    </li>
-                </ol>
-
-                <div className="flex gap-4 items-center flex-col sm:flex-row">
-                    <a
-                        className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-                        href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                        target="_blank"
-                        rel="noopener noreferrer"
+        <div>
+            <Container maxW={"xl"} spaceY={"10"}>
+                <Box
+                    borderRadius="lg"
+                    mb={6}
+                    p={3}
+                    textAlign="center"
+                    bg={{ base: "red.solid", _dark: "red.solid" }}
+                    css={{ backdropFilter: 'blur(10px)' }}
+                >
+                    <Text fontWeight={"medium"} color={"gray.solid"}>
+                        Hi, there! I'm a IT student and developer.
+                    </Text>
+                </Box>
+                <Box display={"flex"} alignItems={"center"} justifyContent={"space-between"}>
+                    <Box>
+                        <Heading as={"h1"} fontSize={"3xl"}>
+                            Cicero Paulino
+                        </Heading>
+                        <Text fontWeight={"semibold"} fontStyle={"italic"} color={"red.solid"} opacity={0.7}>
+                            OS Dev - DevOps
+                        </Text>
+                    </Box>
+                    <Box
+                        borderColor="red.solid"
+                        borderWidth={3}
+                        borderStyle="solid"
+                        w="100px"
+                        h="100px"
+                        display="inline-block"
+                        borderRadius="full"
+                        overflow="hidden"
                     >
                         <Image
-                            className="dark:invert"
-                            src="/vercel.svg"
-                            alt="Vercel logomark"
-                            width={20}
-                            height={20}
+                            src="/assets/IMG_20240612_135304.png"
+                            alt="Profile image"
+                            width="100"
+                            height="100"
                         />
-                        Deploy now
-                    </a>
-                    <a
-                        className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-                        href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+                    </Box>
+                </Box>
+                <Box>
+                    <Box spaceY={5}>
+                        <Heading as={"h2"} color={"red.solid"}>
+                            About me
+                        </Heading>
+                        <Text textAlign={"justify"}>
+                            I'm a student of IT Bachelor's at the Federal University of Rio Grande
+                            do Norte (UFRN), in the Digital Metropolis Institute (IMD). Currently,
+                            I'm working on university projects and in the Network Management
+                            department of the Department of Informatics and Applied Mathematics.
+                        </Text>
+                    </Box>
+                </Box>
+
+                <Box display="flex" justifyContent="center" alignItems="center">
+                    <Button colorPalette={"teal"} variant={"surface"}>
+                        Full Profile <RiArrowRightLine />
+                    </Button>
+                </Box>
+
+                <Box spaceY={5}>
+                    <Heading as={"h2"} color={"red.solid"}>
+                        Experiences timeline
+                    </Heading>
+                    <Timeline.Root size="sm" variant="solid" colorPalette={"red"}>
+
+                        <Timeline.Item>
+                            <Timeline.Content flex="1" alignItems="flex-end">
+                                <Timeline.Title>2026.1 - End of IT Graduation</Timeline.Title>
+                                <Timeline.Description>
+                                </Timeline.Description>
+                            </Timeline.Content>
+                            <Timeline.Connector>
+                                <Timeline.Separator />
+                                <Timeline.Indicator />
+                            </Timeline.Connector>
+                            <Timeline.Content flex="1" />
+                        </Timeline.Item>
+
+                        <Timeline.Item>
+                            <Timeline.Content flex="1" />
+                            <Timeline.Connector>
+                                <Timeline.Separator />
+                                <Timeline.Indicator />
+                            </Timeline.Connector>
+                            <Timeline.Content flex="1">
+                                <Timeline.Title>10/2024 - today</Timeline.Title>
+                                <Timeline.Description>
+
+                                    <Card.Root size="md" borderColor={"red.solid"}>
+                                        <Card.Header>
+                                            <Heading size="md"> OS Project</Heading>
+                                        </Card.Header>
+                                        <Card.Body color="fg.muted">
+                                            Develop a OS with a team of students and Professors in UFRN.
+
+                                            <Dialog.Root scrollBehavior="inside" size="cover">
+                                                <Dialog.Trigger asChild>
+                                                    <Button variant="ghost" size={"2xs"} marginTop={2} colorPalette={"teal"}>Read more</Button>
+                                                </Dialog.Trigger>
+                                                <Portal>
+                                                    <Dialog.Backdrop />
+                                                    <Dialog.Positioner>
+                                                        <Dialog.Content>
+                                                            <Dialog.Header>
+                                                                <Dialog.Title>Experience</Dialog.Title>
+                                                            </Dialog.Header>
+                                                            <Dialog.CloseTrigger asChild>
+                                                                <CloseButton size="sm" />
+                                                            </Dialog.CloseTrigger>
+                                                            <Dialog.Body>
+                                                            </Dialog.Body>
+                                                        </Dialog.Content>
+                                                    </Dialog.Positioner>
+                                                </Portal>
+                                            </Dialog.Root>
+                                        </Card.Body>
+                                    </Card.Root>
+
+                                </Timeline.Description>
+                            </Timeline.Content>
+                        </Timeline.Item>
+
+                        <Timeline.Item>
+                            <Timeline.Content flex="1" alignItems="flex-end">
+                                <Timeline.Title>09/2024 - today</Timeline.Title>
+                                <Timeline.Description>
+
+                                    <Card.Root size="md" borderColor={"red.solid"}>
+                                        <Card.Header>
+                                            <Heading size="md"> Network Management</Heading>
+                                        </Card.Header>
+                                        <Card.Body color="fg.muted">
+                                            Work in the Department of Informatics and Applied Mathematics
+                                            in tasks like server, sites and hardware maintenance of the
+                                            department.
+
+
+                                            <Dialog.Root scrollBehavior="inside" size="cover">
+                                                <Dialog.Trigger asChild>
+                                                    <Button variant="ghost" size={"2xs"} marginTop={2} colorPalette={"teal"}>Read more</Button>
+                                                </Dialog.Trigger>
+                                                <Portal>
+                                                    <Dialog.Backdrop />
+                                                    <Dialog.Positioner>
+                                                        <Dialog.Content>
+                                                            <Dialog.Header>
+                                                                <Dialog.Title>Experience</Dialog.Title>
+                                                            </Dialog.Header>
+                                                            <Dialog.CloseTrigger asChild>
+                                                                <CloseButton size="sm" />
+                                                            </Dialog.CloseTrigger>
+                                                            <Dialog.Body>
+                                                            </Dialog.Body>
+                                                        </Dialog.Content>
+                                                    </Dialog.Positioner>
+                                                </Portal>
+                                            </Dialog.Root>
+
+
+                                        </Card.Body>
+                                    </Card.Root>
+
+                                </Timeline.Description>
+                            </Timeline.Content>
+                            <Timeline.Connector>
+                                <Timeline.Separator />
+                                <Timeline.Indicator />
+                            </Timeline.Connector>
+                            <Timeline.Content flex="1" />
+                        </Timeline.Item>
+
+                        <Timeline.Item>
+                            <Timeline.Content flex="1" />
+                            <Timeline.Connector>
+                                <Timeline.Separator />
+                                <Timeline.Indicator />
+                            </Timeline.Connector>
+                            <Timeline.Content flex="1">
+                                <Timeline.Title>09/2023 - 08/2024</Timeline.Title>
+                                <Timeline.Description>
+
+                                    <Card.Root size="md" borderColor={"red.solid"}>
+                                        <Card.Header>
+                                            <Heading size="md"> Scientific Initiation</Heading>
+                                        </Card.Header>
+                                        <Card.Body color="fg.muted">
+                                            study of text sampling approach in immersive three-dimensional environments.
+
+                                            <Dialog.Root scrollBehavior="inside" size="cover">
+                                                <Dialog.Trigger asChild>
+                                                    <Button variant="ghost" size={"2xs"} marginTop={2} colorPalette={"teal"}>Read more</Button>
+                                                </Dialog.Trigger>
+                                                <Portal>
+                                                    <Dialog.Backdrop />
+                                                    <Dialog.Positioner>
+                                                        <Dialog.Content>
+                                                            <Dialog.Header>
+                                                                <Dialog.Title>Experience</Dialog.Title>
+                                                            </Dialog.Header>
+                                                            <Dialog.CloseTrigger asChild>
+                                                                <CloseButton size="sm" />
+                                                            </Dialog.CloseTrigger>
+                                                            <Dialog.Body>
+                                                            </Dialog.Body>
+                                                        </Dialog.Content>
+                                                    </Dialog.Positioner>
+                                                </Portal>
+                                            </Dialog.Root>
+
+                                        </Card.Body>
+                                    </Card.Root>
+
+                                </Timeline.Description>
+                            </Timeline.Content>
+                        </Timeline.Item>
+
+                        <Timeline.Item>
+                            <Timeline.Content flex="1" alignItems="flex-end">
+                                <Timeline.Title>09/2023 - 08/2024</Timeline.Title>
+
+                                <Timeline.Description>
+
+                                    <Card.Root size="md" borderColor={"red.solid"}>
+                                        <Card.Header>
+                                            <Heading size="md"> Scientific Initiation</Heading>
+                                        </Card.Header>
+                                        <Card.Body color="fg.muted">
+                                            study of text sampling approach in immersive three-dimensional environments.
+
+                                            <Dialog.Root scrollBehavior="inside" size="cover">
+                                                <Dialog.Trigger asChild>
+                                                    <Button variant="ghost" size={"2xs"} marginTop={2} colorPalette={"teal"}>Read more</Button>
+                                                </Dialog.Trigger>
+                                                <Portal>
+                                                    <Dialog.Backdrop />
+                                                    <Dialog.Positioner>
+                                                        <Dialog.Content>
+                                                            <Dialog.Header>
+                                                                <Dialog.Title>Experience</Dialog.Title>
+                                                            </Dialog.Header>
+                                                            <Dialog.CloseTrigger asChild>
+                                                                <CloseButton size="sm" />
+                                                            </Dialog.CloseTrigger>
+                                                            <Dialog.Body>
+                                                            </Dialog.Body>
+                                                        </Dialog.Content>
+                                                    </Dialog.Positioner>
+                                                </Portal>
+                                            </Dialog.Root>
+
+                                        </Card.Body>
+                                    </Card.Root>
+
+                                </Timeline.Description>
+                            </Timeline.Content>
+                            <Timeline.Connector>
+                                <Timeline.Separator />
+                                <Timeline.Indicator />
+                            </Timeline.Connector>
+                            <Timeline.Content flex="1" />
+                        </Timeline.Item>
+
+                        <Timeline.Item>
+                            <Timeline.Content flex="1" />
+                            <Timeline.Connector>
+                                <Timeline.Separator />
+                                <Timeline.Indicator />
+                            </Timeline.Connector>
+                            <Timeline.Content flex="1">
+                                <Timeline.Title>2021.1 - Start Of IT Graduation</Timeline.Title>
+                            </Timeline.Content>
+                        </Timeline.Item>
+
+                    </Timeline.Root>
+
+                </Box>
+
+
+                <Box display="flex" flexDirection="column" alignItems="flex-start" gap={3}>
+                    <Heading as={"h2"} color="red.solid">
+                        Other platforms
+                    </Heading>
+
+                    <Link
+                        href="https://github.com/ciceropaulino"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Read our docs
-                    </a>
-                </div>
-            </main>
-            <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-                <a
-                    className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-                    href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <Image
-                        aria-hidden
-                        src="/file.svg"
-                        alt="File icon"
-                        width={16}
-                        height={16}
-                    />
-                    Learn
-                </a>
-                <a
-                    className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-                    href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <Image
-                        aria-hidden
-                        src="/window.svg"
-                        alt="Window icon"
-                        width={16}
-                        height={16}
-                    />
-                    Examples
-                </a>
-                <a
-                    className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-                    href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <Image
-                        aria-hidden
-                        src="/globe.svg"
-                        alt="Globe icon"
-                        width={16}
-                        height={16}
-                    />
-                    Go to nextjs.org →
-                </a>
-            </footer>
-        </div>
+                        <Button colorPalette="teal" variant="ghost">
+                            <RiGithubLine /> @ciceropaulino
+                        </Button>
+                    </Link>
+
+                    <Link
+                        href="https://www.linkedin.com/in/cicero-paulino-b85795189/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Button colorPalette="teal" variant="ghost">
+                            <RiLinkedinBoxLine /> Cicero Paulino
+                        </Button>
+                    </Link>
+                </Box>
+            </Container>
+        </div >
     );
 }
+
